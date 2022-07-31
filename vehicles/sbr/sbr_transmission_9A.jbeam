@@ -1,0 +1,150 @@
+{
+"sbr_gabe_transaxle_7A": {
+    "information":{
+        "authors":"Gabe Gonsalves",
+        "name":"Gabe's 7-Speed Hypershift Transaxle",
+        "value":2800,
+    },
+    "slotType": "sbr_transaxle",
+   "slots": [
+        ["type", "default", "description"],
+        ["sbr_transfer_case","sbr_transfer_case_RWD","Transfer Case", {"coreSlot":true}],
+        ["sbr_differential_R","sbr_differential_R", "Rear Differential"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        //Old Gear Ratios "gearRatios":[-3.06, 0, 4.20, 2.456 ,1.62 , 1.2, 0.83, 0.5802, 0.4792, 0.3906,0.3151],
+	  "gearRatios":[-3.5692, 0, 4.34, 2.89, 1.92, 1.37, 1.00, 0.76, 0.63],
+       "parkLockTorque":4800,
+	"shiftEfficiency":0.95,
+        "oneWayViscousCoef":8,
+        "gearChangeTime": 0.001,
+        "friction": 3,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDM",
+        "shiftDownRPMOffsetCoef":1.15,
+        "calculateOptimalLoadShiftPoints": true,
+        "transaxleGearChangeDelay":0.375,
+        "aggressionHoldOffThrottleDelay":1,
+        "aggressionSmoothingUp":2.15
+        "aggressionSmoothingDown":0.7
+        "gearboxDecisionSmoothingUp":2
+        "gearboxDecisionSmoothingDown":5
+        "lowShiftDownRPM":820,
+        "lowShiftUpRPM":1200,
+			"torqueConverterLockupMinGear":1,
+	"torqueConverterLockupRPM":1000,
+	"torqueConverterLockupRate":10,
+	"maxGearChangeTime":0.22,
+		"minGearChangeTime":0.05,
+		"sportGearChangeTime": 0.025,
+		"throttleCoefWhileShifting": 0.1,
+		"autoDownShiftInM":false,
+		"defaultAutomaticMode":"P"
+    },
+	 "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //displays
+        ["disp_P",         "sbr_displayP", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Ra",         "sbr_displayR", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_Na",         "sbr_displayN", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_D",         "sbr_displayD", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+		["disp_S",         "sbr_displayS", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_1",         "sbr_display1", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_2",         "sbr_display2", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_3",         "sbr_display3", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_4",         "sbr_display4", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_5",         "sbr_display5", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_6",         "sbr_display6", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["disp_7",         "sbr_display7", "f7r","f7l","f8r", {"x":227, "y":0, "z":0}, {"x":0, "y":0, "z":0}     , {"x":0, "y":0.013, "z":0}, -1, 1, 0, 1],
+        ["gear_A",       "sbr_shifter_A",    "f7r","f7l","f8r", {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0.12, "z":0.0}, 0, 0.3, -0.3, 1],
+   ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["sbr_transaxle", ["sbr_engine","sbr_transmission"]],
+        //
+        ["sbr_shiftgate_A", ["sbr_body","sbr_dash"]],
+        //["sbr_shifter_A", ["sbr_body","sbr_dash"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"selfCollision":false},
+        {"collision":true},
+        {"group":"sbr_transaxle"},
+        {"nodeWeight":32},
+        ["tra1", 0.0, 0.82, 0.25],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":15001000,"beamDamp":500},
+        {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+        ["tra1","e1r"],
+        ["tra1","e3r"],
+        ["tra1","e1l"],
+        ["tra1","e3l"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"sbr_converter_10A": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "sbr_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.310,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"sbr_converter_10AHO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"HO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "sbr_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.330,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"sbr_converter_10ALO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"LO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "sbr_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.285,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+}
