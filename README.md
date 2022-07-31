@@ -2,8 +2,9 @@
 A large pack of transmissions for various vehicles in BeamNG.drive.
 
 ## Installation Instructions
-Have a look at `instructions.md` in the source of the repo to learn how to install these transmissions.  
-**This pack is not available on the BeamNG Repo at this time!**
+### Recommended: Install Within Beam.NG Repo: Search for "Gabe's Transmission Pack"
+Have a look at `instructions.md` in the source of the repo to learn how to install these transmissions manually.  
+
 
 ## Supported Vehicles
 Here, you'll find a list of all the supported vehicles at the moment, see all transmissions for a specific vehicle, and also be able to see the specifics of each transmission.
