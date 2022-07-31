@@ -1,0 +1,130 @@
+{
+"etk_transmission__gabe_12A": {
+    "information":{
+        "authors":"Gabe Gonsalves",
+        "name":"Gabe's 12-Speed Automatic Transmission",
+        "value":1700,
+    },
+    "slotType" : "etk_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_converter_10A","etk_converter10A","Torque Converter", {"coreSlot":true}],
+        ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "gearRatios":[-4.86, 0, 4.0, 3.0, 2.185, 1.597, 1.304, 1.000, 0.782, 0.653, 0.58, 0.517, 0.474, 0.42],
+        "parkLockTorque":4800,
+	"shiftEfficiency":0.95,
+        "oneWayViscousCoef":8,
+        "gearChangeTime": 0.06,
+        "friction": 3,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM"
+		"neutralSelectionDelay":0.350
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":0.375
+        "aggressionHoldOffThrottleDelay":1,
+        "aggressionSmoothingUp":2.8
+        "aggressionSmoothingDown":3
+        "gearboxDecisionSmoothingUp":3
+        "gearboxDecisionSmoothingDown":3
+        "highShiftDownRPM":[0,0,3700,3700,4200,4350,4350,4600,4800,4900,5000]
+		"lowShiftDownRPM":1100,
+		"maxGearChangeTime":0.375,
+		"minGearChangeTime":0.375,
+		"sportGearChangeTime": 0.08,
+		"throttleCoefWhileShifting": 1,
+	"lowShiftUpRPM":[0,0,2000,2000,2000,2000,2000,1800,1800,1800,1800]
+	"torqueConverterLockupMinGear":1
+	"torqueConverterLockupRPM":1400
+	"torqueConverterLockupRate":3
+	"autoDownShiftInM":false
+	"defaultAutomaticMode":"P"
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk_transmission", ["etk_engine","etk_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--10 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_transmission"},
+         {"nodeWeight":42},
+         ["tra1", 0.0, -0.36, 0.33],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e1l"],
+          ["tra1","e3r"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"etk_converter_10A": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.310,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10AHO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"HO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.330,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10ALO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"LO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.285,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+}

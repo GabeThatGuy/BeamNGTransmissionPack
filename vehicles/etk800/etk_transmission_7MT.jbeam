@@ -1,0 +1,82 @@
+{
+"etk_transmission_7MT": {
+    "information":{
+        "authors":"Gabe Gonsalves",
+        "name":"Gabe's 7-Speed Manual Transmission",
+        "value":1700,
+    },
+    "slotType": "etk_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_flywheel","etk_flywheel_sport","Flywheel", {"coreSlot":true}],
+        ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        //premultiplied to account for final drive difference
+        "gearRatios":[-4.86, 0, 4.3772, 2.8586, 1.9206, 1.3684, 1.0, 0.8204, 0.68],
+        "friction": 5,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.50, 0.00, 0.20, 0.16, 0.14, 0.14, 0.10, 0.14],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.11, 0.13, 0.15, 0.17, 0.13, 0.17],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "vehicleController": {
+        "transmissionShiftDelay":0.15,
+        "shiftDownRPMOffsetCoef":1.2,
+        //"aggressionSmoothingDown":0.05,
+        "calculateOptimalLoadShiftPoints": true,
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,1400,1500,1500,1400,1300],
+        "lowShiftUpRPM":[0,0,3000,2600,2500,2400,2300],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk_transmission", ["etk_engine","etk_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--7 Speed Manual--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_transmission"},
+         {"nodeWeight":33},
+         ["tra1", 0.0, -0.36, 0.375],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e1l"],
+          ["tra1","e3r"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

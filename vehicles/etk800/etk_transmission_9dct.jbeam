@@ -1,0 +1,123 @@
+{
+"etk_gabe_transmission_9DCT": {
+    "information":{
+        "authors":"Gabe Gonsalves",
+        "name":"Gabe's 9-Speed Dual Clutch Transmission",
+        "value":2800,
+    },
+    "slotType": "etk_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["dctGearbox", "gearbox", "mainEngine", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.06, 0, 4.20, 2.456 ,1.62 , 1.2, 0.83, 0.5802, 0.4792, 0.3906,0.3151],
+        "parkLockTorque":4000,
+        "friction": 10,
+        "gearboxNode:":["tra1"],
+        "additionalEngineInertia":0.07,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "shiftDownRPMOffsetCoef":1.15,
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionGearChangeDelay":0.05,
+        "aggressionHoldOffThrottleDelay":0,
+        "aggressionSmoothingUp":0.92
+        "aggressionSmoothingDown":0.5
+        "gearboxDecisionSmoothingUp":10
+        "gearboxDecisionSmoothingDown":5
+        "lowShiftDownRPM":720,
+        "lowShiftUpRPM":1100,
+        "clutchLaunchStartRPM": 3450,
+        "clutchLaunchTargetRPM": 300,
+        "dctClutchTime": 0.01
+		"autoDownShiftInM":false
+		"defaultAutomaticMode":"P"
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk_transmission", ["etk_engine","etk_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--8 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_transmission"},
+         {"nodeWeight":42},
+         ["tra1", 0.0, -0.36, 0.33],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e1l"],
+          ["tra1","e3r"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"etk_converter_10A": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.310,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10AHO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"HO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.330,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10ALO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"LO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.285,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+}

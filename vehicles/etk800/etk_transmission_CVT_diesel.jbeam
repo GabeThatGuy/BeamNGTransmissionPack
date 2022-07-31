@@ -1,0 +1,125 @@
+{
+"etk_transmission_gcvt_diesel": {
+    "information":{
+        "authors":"Gabe Gonsalves"
+        "name":"Gabe's Diesel CVT Transmission"
+        "value":1700,
+    },
+    "slotType" : "etk_transmission",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk_converter_10A","etk_converter10A","Torque Converter", {"coreSlot":true}],
+        ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["cvtGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "minGearRatio":0.2
+        "maxGearRatio":3.645
+        "parkLockTorque":6800,
+        "oneWayViscousCoef":8,
+        "friction": 1,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDS"
+		"defaultAutomaticMode":"P"
+        "aggressionHoldOffThrottleDelay":0.25,
+        "aggressionSmoothingUp":5
+        "aggressionSmoothingDown":5
+        "gearboxDecisionSmoothingUp":1.0
+        "gearboxDecisionSmoothingDown":1.0
+  
+        "cvtHighRPM":4800
+        "cvtLowRPM":1300
+		"cvtTargetAVSmoothingIn":4
+		"cvtTargetAVSmoothingOut":5
+		"cvtGearRatioSmoothingIn":20
+		"cvtGearRatioSmoothingOut":20
+	"torqueConverterLockupMinGear":1
+	"torqueConverterLockupRPM":1000
+	"torqueConverterLockupRate":3
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk_transmission", ["etk_engine","etk_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--10 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"etk_transmission"},
+         {"nodeWeight":42},
+         ["tra1", 0.0, -0.36, 0.33],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--TRANSMISSION CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e1l"],
+          ["tra1","e3r"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
+"etk_converter_10A": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.310,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10AHO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"HO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.330,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"etk_converter_10ALO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"LO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "etk_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.285,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+}
