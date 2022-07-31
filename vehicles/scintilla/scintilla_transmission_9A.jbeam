@@ -1,0 +1,131 @@
+{
+"scintilla_gabe_transaxle_9A": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Gabe's 9-Speed Hypershift transaxle",
+        "value":2800,
+    },
+    "slotType": "scintilla_transaxle",
+   "slots": [
+        ["type", "default", "description"],
+        ["scintilla_transfer_case","scintilla_transfer_case_RWD","Transfer Case", {"coreSlot":true}],
+        ["scintilla_differential_R","scintilla_differential_R", "Rear Differential"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["torqueConverter", "torqueConverter", "mainEngine", 1],
+        ["automaticGearbox", "gearbox", "torqueConverter", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        //Old Gear Ratios "gearRatios":[-3.06, 0, 4.20, 2.456 ,1.62 , 1.2, 0.83, 0.5802, 0.4792, 0.3906,0.3151],
+	  "gearRatios":[-3.5692, 0, 5, 3.2, 2.14, 1.72, 1.31, 1.0, 0.8062, 0.6154, 0.4792],
+       "parkLockTorque":4800,
+	"shiftEfficiency":0.95,
+        "oneWayViscousCoef":8,
+        "gearChangeTime": 0.001,
+        "friction": 3,
+    },
+   "vehicleController": {
+        "automaticModes":"PRNDSM",
+        "shiftDownRPMOffsetCoef":1.15,
+        "calculateOptimalLoadShiftPoints": true,
+        "transaxleGearChangeDelay":0.375,
+        "aggressionHoldOffThrottleDelay":1,
+        "aggressionSmoothingUp":2.15
+        "aggressionSmoothingDown":0.7
+        "gearboxDecisionSmoothingUp":2
+        "gearboxDecisionSmoothingDown":5
+        "lowShiftDownRPM":820,
+        "lowShiftUpRPM":1200,
+			"torqueConverterLockupMinGear":1,
+	"torqueConverterLockupRPM":1000,
+	"torqueConverterLockupRate":10,
+	"maxGearChangeTime":0.22,
+		"minGearChangeTime":0.05,
+		"sportGearChangeTime": 0.025,
+		"throttleCoefWhileShifting": 0.1,
+		"autoDownShiftInM":false,
+		"defaultAutomaticMode":"P"
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["scintilla_transaxle", ["scintilla_engine","scintilla_transaxle"],[]{"pos":{"x":0,"y":0,"z":0}}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--8 Speed Auto--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"scintilla_transaxle"},
+         {"nodeWeight":42},
+         ["tra1", 0.0, -0.36, 0.33],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--transaxle CONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":15001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          ["tra1","e1r"],
+          ["tra1","e1l"],
+          ["tra1","e3r"],
+          ["tra1","e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"scintilla_converter_10A": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "scintilla_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.310,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"scintilla_converter_10AHO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"HO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "scintilla_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.330,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+"scintilla_converter_10ALO": {
+    "information":{
+        "authors":"BeamNG + Pinhead Larry",
+        "name":"LO 10-Speed Torque Converter",
+        "value":1500,
+    },
+    "slotType" : "scintilla_converter_10A",
+    "torqueConverter": {
+        "uiName":"Torque Converter",
+        "converterDiameter": 0.285,
+        "converterStiffness":15,
+        "couplingAVRatio":0.95,
+        "stallTorqueRatio":1.8,
+        "lockupClutchTorque":600,
+	"additionalEngineInertia":0.10,
+    },
+},
+}
