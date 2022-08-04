@@ -1,6 +1,6 @@
 # Gabe's BeamNG Transmission Pack
 A large pack of transmissions for various vehicles in BeamNG.drive.
-
+With 50+ hours of tweaking shift logic and dozens more of consistency testing, the goal of the perfect BeamNG transmission is closer than ever.
 ## Installation Instructions
 ### Recommended: Install Within Beam.NG Repo: Search for "Gabe's Transmission Pack"
 Have a look at `instructions.md` in the source of the repo to learn how to install these transmissions manually.  
