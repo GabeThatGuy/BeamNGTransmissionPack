@@ -49,6 +49,10 @@ Transmissions for the ETK 800 on this list will be sorted by type:
 #### 9-Speed Hypershift Transmission
 - Loosely Based on the ZF 8HP Automatic Transmission
 
+#### GDC Transmissions
+- 8-Speed (The most refined and flagship transmission of the whole project)
+- Customizable Shift Logic!
+
 ### Hirochi SBR
 #### 7-Speed Hypershift Transmission
 - Uses the same gearing as the Mercedes-AMG 7-Speed G-Tronic Dual-Clutch Transmission
