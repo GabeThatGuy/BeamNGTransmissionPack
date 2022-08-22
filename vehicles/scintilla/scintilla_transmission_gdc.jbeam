@@ -1,15 +1,16 @@
 {
-"etk_gabe_transmission_GPDK": {
+"scintilla_gabe_transmission_GPDK": {
     "information":{
         "authors":"Gabe Gonsalves",
         "name":"Gabe's 8-Speed GDC Transmission",
         "value":2800,
     },
-    "slotType": "etk_transmission",
+    "slotType": "scintilla_transaxle",
     "slots": [
         ["type", "default", "description"],
-        ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"],
-        ["etk_shiftlogic","standard_logic","Shift Logic",{"coreSlot":true}],
+        ["scintilla_transfer_case","scintilla_transfer_case_RWD","Transfer Case", {"coreSlot":true}],
+        ["scintilla_differential_R","scintilla_differential_R", "Rear Differential"],
+        ["scintilla_shiftlogic","standard_logic","Shift Logic",{"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -17,7 +18,7 @@
     ],
     "gearbox": {
         "uiName":"Gearbox",
-        "gearRatios":[-3.17, 0, 4.89, 3.17 ,2.15, 1.56, 1.18, 0.94, 0.76, 0.61],
+        "gearRatios":[-3.99, 0, 4.89, 3.17 ,2.15, 1.56, 1.18, 0.94, 0.76, 0.61],
         "parkLockTorque":4000,
         "friction": 0, //Old = 10
         "gearboxNode:":["tra1"],
@@ -27,7 +28,7 @@
 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["etk_transmission", ["etk_engine","etk_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
+        ["scintilla_transmission", ["scintilla_engine","scintilla_transmission"],[]{"pos":{"x":0,"y":0,"z":0}}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -36,7 +37,7 @@
          {"collision":true},
          {"nodeMaterial":"|NM_METAL"},
          {"frictionCoef":0.5},
-         {"group":"etk_transmission"},
+         {"group":"scintilla_transmission"},
          {"nodeWeight":42},
          ["tra1", 0.0, -0.36, 0.33],
          {"group":""},
@@ -62,7 +63,7 @@
         "name":"Maximum Fuel Efficiency",
         "value":1500,
     },
-    "slotType" : "etk_shiftlogic",
+    "slotType" : "scintilla_shiftlogic",
     "vehicleController": {
         "automaticModes":"PRND",
         "shiftDownRPMOffsetCoef":0.5,
@@ -78,9 +79,9 @@
         "clutchLaunchStartRPM": 2600, //Old =3650
         "clutchLaunchTargetRPM": 600, //Old = 900
         "dctClutchTime": 0.0189
-    //"throttleCoefWhileShifting": 0.5,
-    "autoDownShiftInM":false
-    "defaultAutomaticMode":"P"
+		//"throttleCoefWhileShifting": 0.5,
+		"autoDownShiftInM":false
+		"defaultAutomaticMode":"P"
 },
 },
 
@@ -91,7 +92,7 @@
         "name":"Balanced",
         "value":1500,
     },
-    "slotType" : "etk_shiftlogic",
+    "slotType" : "scintilla_shiftlogic",
     "vehicleController": {
         "automaticModes":"PRNDSM",
         "shiftDownRPMOffsetCoef":1.15,
@@ -107,9 +108,9 @@
         "clutchLaunchStartRPM": 3600, //Old =3650
         "clutchLaunchTargetRPM": 1000, //Old = 900
         "dctClutchTime": 0.0189
-    //"throttleCoefWhileShifting": 0.5,
-    "autoDownShiftInM":false
-    "defaultAutomaticMode":"P"
+		//"throttleCoefWhileShifting": 0.5,
+		"autoDownShiftInM":false
+		"defaultAutomaticMode":"P"
 },
 },
 
@@ -119,7 +120,7 @@
         "name":"Maximum Performance (Track Mode)",
         "value":1500,
     },
-    "slotType" : "etk_shiftlogic",
+    "slotType" : "scintilla_shiftlogic",
     "vehicleController": {
         "automaticModes":"PRNSM",
         "shiftDownRPMOffsetCoef":2.6,
@@ -135,10 +136,11 @@
         "clutchLaunchStartRPM": 6250, //Old =3650
         "clutchLaunchTargetRPM": 1020, //Old = 250
         "dctClutchTime": 0.0189
-    //"throttleCoefWhileShifting": 0.5,
-    "autoDownShiftInM":false
-    "defaultAutomaticMode":"N"
+		//"throttleCoefWhileShifting": 0.5,
+		"autoDownShiftInM":false
+		"defaultAutomaticMode":"N"
     },
 },
+
 
 }

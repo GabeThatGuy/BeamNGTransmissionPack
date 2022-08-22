@@ -8,7 +8,7 @@
     "slotType": "etk_transmission",
    "slots": [
         ["type", "default", "description"],
-        ["etk_converter_10A","etk_converter10A","Torque Converter", {"coreSlot":true}],
+        ["etk_torque_converter","gabes_torque_converter","Torque Converter", {"coreSlot":true}],
         ["etk_transfer_case","etk_transfer_case_RWD", "Transfer Case"{"coreSlot":true}],
     ],
     "powertrain" : [
@@ -39,8 +39,8 @@
         "lowShiftDownRPM":820,
         "lowShiftUpRPM":1200,
 			"torqueConverterLockupMinGear":1,
-	"torqueConverterLockupRPM":1000,
-	"torqueConverterLockupRate":10,
+	"torqueConverterLockupRPM":8000,
+	"torqueConverterLockupRate":30,
 	"maxGearChangeTime":0.22,
 		"minGearChangeTime":0.05,
 		"sportGearChangeTime": 0.025,
@@ -77,54 +77,21 @@
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
-"etk_converter_10A": {
+
+"gabes_torque_converter": {
     "information":{
-        "authors":"BeamNG + Pinhead Larry",
-        "name":"10-Speed Torque Converter",
+        "authors":"Gabe Gonsalves + Pinhead Larry",
+        "name":"Gabe's Torque Converter",
         "value":1500,
     },
-    "slotType" : "etk_converter_10A",
+    "slotType" : "etk_torque_converter",
     "torqueConverter": {
         "uiName":"Torque Converter",
-        "converterDiameter": 0.310,
-        "converterStiffness":15,
+        "converterDiameter": 0.375,
+        "converterStiffness":25,
         "couplingAVRatio":0.95,
         "stallTorqueRatio":1.8,
-        "lockupClutchTorque":600,
-	"additionalEngineInertia":0.10,
-    },
-},
-"etk_converter_10AHO": {
-    "information":{
-        "authors":"BeamNG + Pinhead Larry",
-        "name":"HO 10-Speed Torque Converter",
-        "value":1500,
-    },
-    "slotType" : "etk_converter_10A",
-    "torqueConverter": {
-        "uiName":"Torque Converter",
-        "converterDiameter": 0.330,
-        "converterStiffness":15,
-        "couplingAVRatio":0.95,
-        "stallTorqueRatio":1.8,
-        "lockupClutchTorque":600,
-	"additionalEngineInertia":0.10,
-    },
-},
-"etk_converter_10ALO": {
-    "information":{
-        "authors":"BeamNG + Pinhead Larry",
-        "name":"LO 10-Speed Torque Converter",
-        "value":1500,
-    },
-    "slotType" : "etk_converter_10A",
-    "torqueConverter": {
-        "uiName":"Torque Converter",
-        "converterDiameter": 0.285,
-        "converterStiffness":15,
-        "couplingAVRatio":0.95,
-        "stallTorqueRatio":1.8,
-        "lockupClutchTorque":600,
+        "lockupClutchTorque":800,
 	"additionalEngineInertia":0.10,
     },
 },

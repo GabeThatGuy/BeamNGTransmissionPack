@@ -2,7 +2,7 @@
 "etk_transmission_gcvt": {
     "information":{
         "authors":"Gabe Gonsalves"
-        "name":"Gabe's CVT Transmission"
+        "name":"Gabe's 7000 RPM CVT Transmission"
         "value":1700,
     },
     "slotType" : "etk_transmission",
@@ -31,7 +31,7 @@
         "aggressionSmoothingDown":5
         "gearboxDecisionSmoothingUp":1.0
         "gearboxDecisionSmoothingDown":1.0
-  
+
         "cvtHighRPM":6300
         "cvtLowRPM":1100
 		"cvtTargetAVSmoothingIn":4.6
