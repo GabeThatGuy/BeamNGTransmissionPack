@@ -101,8 +101,8 @@ Once the engine and transmission are matched, the clutch launch is finished, so 
 
 ### Gabe's SelectShift Technology
 - Allows the user to select the gear ratios that the transmission uses in the part selector! (Only available on GDC Transmissions)
-- Each gear ratio comes with a recommended final drive ratio to use. 
-Ratio Options:
+- Each gear ratio comes with a recommended final drive ratio to use.   
+#### Ratio Options
 - Gabe's Gearing
 - ZF 8HP
 - 9-Speed AMG-GTronic
