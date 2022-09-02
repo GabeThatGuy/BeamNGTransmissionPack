@@ -4,7 +4,7 @@ Gabe's transmission pack is a (soon to be) huge collection of transmissions avai
 Hundreds of hours have gone into the development of this project and it's just me (Gabe) working on it, so updates are somewhat few and far between. 
 
 ## Changelog
-You can view the changelog [[Changelog|here.]]
+You can view the changelog by clicking on the changelog file in the root directory of this repo. 
 
 ## Supported Vehicles
 There are two types of support for this pack, full support and partial support. Full support means that all transmissions that are available in the pack will work on that vehicle. Partial support means that at least one of the available transmissions works on that vehicle.
@@ -24,10 +24,10 @@ All transmissions that are available for the ETK 800 are available for the ETK 1
 
 ## Transmissions
 ### GDC
-GDC Transmissions are one of the two main focuses of the project. The main focus of the GDC was to have a transmission that was customizeable, entertaining, and free from lack of character. To do this, I gave it the best shift logic that I have made, which keeps improving with every update, as well as the best of my technologies (see [[#Technologies|below]]).
+GDC Transmissions are one of the two main focuses of the project. The main focus of the GDC was to have a transmission that was customizeable, entertaining, and free from lack of character. To do this, I gave it the best shift logic that I have made, which keeps improving with every update, as well as the best of my technologies.
 
 ### Hypershift
-Hypershift transmissions are highly advanced iterations of torque-converter automatic transmissions, and are the second main focus of the project. You can read more about the specifics of hypershift technology [[#Hypershift Technology|here,]] but the goal was to take the downfalls of a traditional automatic transmission and overcome them, at minimal cost to driving experience and smoothness. 
+Hypershift transmissions are highly advanced iterations of torque-converter automatic transmissions, and are the second main focus of the project. You can read more about the specifics of hypershift technology down in the technology section. The goal was to take the downfalls of a traditional automatic transmission and overcome them, at minimal cost to driving experience and smoothness. 
 ### CVT
 The goal of CVT transmissions is usually to get the best fuel efficiency possible, but my CVTs are tuned for throttle response and peak power on demand. Fuel efficiency is good too, due to the nature of CVT transmissions, but that wasn't the main focus. My CVTs are capable of handling huge amounts of torque, so they're ideal for towing heavy loads up hills, or you can pair them with a big V8 to get some insane quarter mile times.
 
@@ -49,7 +49,7 @@ After working on the hypershift transmissions for so long, I wanted to switch it
 
 ## Technologies
 ### Hypershift Technology
-Gabe's Hypershift Technology works by decreasing the weight (and therefore inertia) of a standard automatic transmission to increase shift speed, modifying the rev-match throttle mapping to create snappier downshifts, and also using [[#Gabe's Shift Logic]] to produce the smoothest and most responsive driving experience.
+Gabe's Hypershift Technology works by decreasing the weight (and therefore inertia) of a standard automatic transmission to increase shift speed, modifying the rev-match throttle mapping to create snappier downshifts, and also using Gabe's Shift Logic to produce the smoothest and most responsive driving experience.
 > Note: Hypershift Transmissions use Gabe's Balanced Shift Logic
 
 Hypershift transmissions are recommended where GDC transmissions are unavailable instead of traditional automatic transmissions.
@@ -59,7 +59,7 @@ Traditional Automatic Transmissions, such as "Gabe's 10-Speed Automatic Transmis
 There are three types of shift logic:
 #### Balanced
 - Designed to best mimic the behaviour of a real dual-clutch transmission's shift logic, with some of my personal enhancements.
-- GDC Transmissions use [[#Gabe's Clutch Launch Technology]] (Derived from PDK Transmissions) to improve off-the-line acceleration and give more control when reversing. 
+- GDC Transmissions use Gabe's Clutch Launch Technology to improve off-the-line acceleration and give more control when reversing. 
 - Has nearly instantaneous downshift response for passing on the freeway, but will also keep the RPM low while cruising for higher efficiency.
 - Will not hesitate to downshift to redline on full throttle.
  
