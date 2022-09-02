@@ -68,7 +68,6 @@ There are three types of shift logic:
 - Holds RPMs high and downshifts early.
 - GDC Clutch Launch will rev the engine approx 2x as high as balanced mode to give up to a 50% faster launch. 
 - Regular "D" mode is not available. Only sport and manual shifting options are permitted.
-- 
 #### Maximum Fuel Efficiency
 - Designed for maximum fuel efficiency.
 - Upshifts early to keep the engine rpm as low as possible for the best combustion efficiency percentage. 
